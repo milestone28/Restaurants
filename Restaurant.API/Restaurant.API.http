@@ -1,16 +1,29 @@
 @host = http://localhost
 @port = 5268
 
-@Restaurant.API_HostAddress = http://localhost:5268
+@Restaurant.API_HostAddress = https://localhost:7058
 
-GET {{Restaurant.API_HostAddress}}/weatherforecast/
-Accept: application/json
-Guid: {{$guid}}
-LocalDate: {{$datetime iso8601}}
-Random-int: {{$randomInt}}
+GET {{Restaurant.API_HostAddress}}/api/restaurants
+
 ###
-POST {{Restaurant.API_HostAddress}}/weatherforecast/
-content-type: application/json
+
+@id=0
+GET {{Restaurant.API_HostAddress}}/api/restaurants/5
+
+###
+
+POST {{Restaurant.API_HostAddress}}/api/restaurants
+Content-Type: application/json
 {
-  "email":"test@gmail.com"
+  "Name" : "Mang Inasal",
+  "Description" : "A Filipino Restaurant",
+  "Category" : "Italiadn",
+  "HasDelivery" : true,
+  "ContactEmail" : "MangInasal@gmail.com",
+  "ConctactNumber" : "01293213",
+  "City" : "Davao",
+  "Street" : "456 boulkevard",
+  "PostalCode" : "02-800"
 }
+
+###
