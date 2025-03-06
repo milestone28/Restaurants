@@ -8,7 +8,7 @@ GET {{Restaurant.API_HostAddress}}/api/restaurants
 ###
 
 @id=0
-GET {{Restaurant.API_HostAddress}}/api/restaurants/5
+GET {{Restaurant.API_HostAddress}}/api/restaurants/4
 
 ###
 
@@ -28,6 +28,17 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurant.API_HostAddress}}/api/restaurants
+DELETE {{Restaurant.API_HostAddress}}/api/restaurants/5
+
+###
+
+PATCH {{Restaurant.API_HostAddress}}/api/restaurants/4
+Content-Type: application/json
+
+{
+    "Name" : "Mang Inasal123",
+    "Description" : "A Filipino Restaurant123",
+    "HasDelivery" : true
+}
 
 ###
